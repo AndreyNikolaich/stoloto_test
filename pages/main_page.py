@@ -8,9 +8,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 class AuthPage(BasePage):
-    def open_page(self):
-        link = "https://www.stoloto.ru/"
-        link.click()
+    #def open_page(self):
+        #link = "https://www.stoloto.ru/"
+        #link.click()
 
     def login(self):
         login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
@@ -43,8 +43,13 @@ class AuthPage(BasePage):
         auto_fill.click()
 
     def go_to_pay(self):
-        button_pay_wallet = self.browser.find_element(*PageLotteryLocators7x49.BUTTON_PAY)
-        button_pay_wallet.click()
+        if self.browser.find_element(*WalletLocators.WALLET_SUM) >= "25":
+            button_pay_wallet = self.browser.find_element(*PageLotteryLocators7x49.BUTTON_PAY)
+            button_pay_wallet.click()
+        else:
+            print('нехватка средств')
+            return None
+
 
     def should_button_pay(self):
         assert self.is_element_present(By.XPATH,'//*[@id="content"]/div[5]/div/div/div[2]/div[4]/form[5]/input[2]'), "element is not present"

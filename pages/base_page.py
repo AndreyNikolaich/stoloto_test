@@ -33,3 +33,4 @@ class BasePage():
             return True
 
         return False
+

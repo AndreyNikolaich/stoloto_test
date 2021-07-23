@@ -26,3 +26,6 @@ class NumbersLottery():
 
 class UpsaleBanners():
     BANNER_IN_PAGE_PAY = (By.XPATH, '//*[@id="content"]/div[2]/div')
+
+#class ElementLocators():
+

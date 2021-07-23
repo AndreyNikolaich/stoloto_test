@@ -5,7 +5,7 @@ import pytest
 
 
 @pytest.mark.auth_user
-class TestAuthUser ():
+class TestAuthUser (AuthPage):
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
         link = "https://www.stoloto.ru/"
@@ -32,6 +32,6 @@ class TestAuthUser ():
         page.go_to_pay()
         time.sleep(5)
         page.go_to_tickets_page()
-        pag
+
 
 
