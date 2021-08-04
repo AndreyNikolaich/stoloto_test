@@ -1,10 +1,8 @@
-from .locators import MainPageLocators
-from .locators import WalletLocators
-from .locators import PageLotteryLocators7x49
+from fixture.locators import MainPageLocators
+from fixture.locators import WalletLocators
+from fixture.locators import PageLotteryLocators7x49
 from .base_page import BasePage
-from .locators import NumbersLottery
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from fixture.locators import NumbersLottery
 from selenium.webdriver.common.by import By
 
 class AuthPage(BasePage):

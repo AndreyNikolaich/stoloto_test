@@ -1,6 +1,6 @@
 import time
 #from .pages.main_page import LotteryLink
-from .pages.main_page import AuthPage
+from pages.main_page import AuthPage
 import pytest
 
 

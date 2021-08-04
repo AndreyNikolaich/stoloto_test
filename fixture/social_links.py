@@ -1,16 +1,20 @@
 import time
 
-from .base_page import BasePage
 
 
-class SocialLinksBase(BasePage):
+
+class SocialLinksHelper:
+
+    def __init__(self, app):
+        self.app = app
+
     def get_current_url(self):
-        wd = self.browser
+        wd = self.app.wd
         time.sleep(1)
         return str(wd.current_url)
 
     def social_links(self):
-        wd = self.browser
+        wd = self.app.wd
         time.sleep(4)
         home_page = wd.window_handles
         wd.find_element_by_xpath("//div[@id='navigation']/div/div[5]/div/ul/li").click()  # vk

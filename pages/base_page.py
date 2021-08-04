@@ -3,7 +3,8 @@ from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-
+import time
+import pytest
 
 class BasePage():
     def __init__(self, browser, url):
@@ -34,3 +35,29 @@ class BasePage():
 
         return False
 
+    def visible_xpath(self, element, t):
+        wd = self.browser
+        for i in range(t):
+            try:
+                if wd.find_element_by_xpath(element).is_displayed():
+                    break
+            except:
+                pass
+            time.sleep(1)
+        else:
+            print('нет элемента')
+            #pytest.fail("Не найден элемент " + element)
+
+    def visible_css(self, element, t):
+        wd = self.browser
+        for i in range(t):
+            try:
+                if wd.find_element_by_css_selector(element).is_displayed():
+                    break
+            except:
+                pass
+            time.sleep(1)
+        else:
+            print("Элемент не найден")
+            #self.app.screenshot.maker()
+            #pytest.fail("Не найден элемент " + element)

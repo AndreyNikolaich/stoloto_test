@@ -1,12 +1,27 @@
 import pytest
-from selenium import webdriver
+from fixture.application import Application
+
+fixture = None
+
+@pytest.fixture()
+def app(request):
+    global fixture
+    if fixture is None:
+        fixture = Application()
+        fixture.session.login()
+    else:
+        if not fixture.is_valid():
+            fixture = Application()
+            fixture.session.login()
+    return fixture
+
+@pytest.fixture(scope="session", autouse=True)
+def stop(request):
+    def fin():
+        fixture.session.logout()
+        fixture.destroy()
+    request.addfinalizer(fin)
+    return fixture
 
 
-@pytest.fixture(scope="function")
-def browser():
-    print("\nstart browser for test..")
-    browser = webdriver.Chrome()
-    yield browser
-    print("\nquit browser..")
-    browser.quit()
 

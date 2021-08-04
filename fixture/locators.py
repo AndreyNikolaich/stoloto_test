@@ -9,7 +9,7 @@ class MainPageLocators():
     USER_NAME = (By.XPATH, '//*[@id="layout"]/div[1]/div/div[1]/div[2]/div[1]/div/a')
     MY_TICKETS_LINK = (By.XPATH, '//*[@id="content"]/div[1]/div/div[2]/small/p/a')
     ALL_TICKETS = (By.XPATH, '//*[@id="content"]/div[2]/div/div[2]/div/ul/li[1]/ul/li[1]/a')
-
+    LOGOUT = (By.XPATH, '//*[@id="layout"]/div[1]/div/div[1]/div[2]/div[5]/div/a')
 class WalletLocators():
     WALLET_SUM = (By.XPATH, '//*[@id="layout"]/div[6]/div[1]/div/div[1]/div/div[1]/span[2]/span')
     BUTTON_WALLET_REFRESH = (By.XPATH, '//*[@id="layout"]/div[6]/div[1]/div/div[1]/div/div[1]/span[3]')
@@ -29,3 +29,10 @@ class UpsaleBanners():
 
 #class ElementLocators():
 
+class FooterLoc():
+    GIFT_TICKET = (By.XPATH, '//*[@id="navigation"]/div[1]/div[3]/div/ul/li[3]/a')
+
+
+class BetOneClick():
+    BET_ONE_CLICK = (By.XPATH, '//*[@id="bet1click_home"]/div')
+    TICKET = (By.XPATH, '//*[@id="bet1click_home"]/div/div[1]/div/a[6]')
