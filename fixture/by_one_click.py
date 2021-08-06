@@ -19,6 +19,12 @@ class ByOneClickHelper:
         url = self.get_current_url()
         if not url == game_name:
             return False
+        wd.find_element(*BetOneClick.BUTTON_PAY_ONE_CLICK).click()
+        wd.find_element(*BetOneClick.BY_WITHOUT_REGISTRATION).click()
+        url_buy_without_registration = self.get_current_url()
+        assert url_buy_without_registration == "https://www.stoloto.ru/guest/payment/login?targetUrl=/payment/bets/service"
+
+
 
 
 

@@ -38,3 +38,5 @@ class BetOneClick():
     BET_ONE_CLICK = (By.XPATH, '//*[@id="bet1click_home"]/div')
     TICKET = (By.CLASS_NAME, 'show1')
     GAME_NAME = (By.CLASS_NAME, 'game_name')
+    BUTTON_PAY_ONE_CLICK = (By.XPATH, '//*[@id="content"]/div/div/div[2]/div/form[1]/button')
+    BY_WITHOUT_REGISTRATION= (By.XPATH, '//*[@id="content"]/div/div/div/div[8]/span/a')
