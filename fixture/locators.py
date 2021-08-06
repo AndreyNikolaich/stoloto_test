@@ -6,10 +6,11 @@ class MainPageLocators():
     LOGIN_EMAIL = (By.XPATH, '//*[@id="auth_login"]')
     LOGIN_PASSWORD = (By.XPATH, '//*[@id="auth_password"]')
     LOGIN_IN = (By.CSS_SELECTOR, '[class="pretty_button_new pretty_button type_primary btn_l scaller"]')
-    USER_NAME = (By.XPATH, '//*[@id="layout"]/div[1]/div/div[1]/div[2]/div[1]/div/a')
+    USER_NAME = (By.XPATH, '//a[text()="Andrey"]')
     MY_TICKETS_LINK = (By.XPATH, '//*[@id="content"]/div[1]/div/div[2]/small/p/a')
     ALL_TICKETS = (By.XPATH, '//*[@id="content"]/div[2]/div/div[2]/div/ul/li[1]/ul/li[1]/a')
-    LOGOUT = (By.XPATH, '//*[@id="layout"]/div[1]/div/div[1]/div[2]/div[5]/div/a')
+    LOGOUT = (By.CSS_SELECTOR, '[href="/logout"]')
+
 class WalletLocators():
     WALLET_SUM = (By.XPATH, '//*[@id="layout"]/div[6]/div[1]/div/div[1]/div/div[1]/span[2]/span')
     BUTTON_WALLET_REFRESH = (By.XPATH, '//*[@id="layout"]/div[6]/div[1]/div/div[1]/div/div[1]/span[3]')
@@ -35,4 +36,5 @@ class FooterLoc():
 
 class BetOneClick():
     BET_ONE_CLICK = (By.XPATH, '//*[@id="bet1click_home"]/div')
-    TICKET = (By.XPATH, '//*[@id="bet1click_home"]/div/div[1]/div/a[6]')
+    TICKET = (By.CLASS_NAME, 'show1')
+    GAME_NAME = (By.CLASS_NAME, 'game_name')
