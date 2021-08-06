@@ -10,14 +10,15 @@ class MainPageLocators():
     MY_TICKETS_LINK = (By.XPATH, '//*[@id="content"]/div[1]/div/div[2]/small/p/a')
     ALL_TICKETS = (By.XPATH, '//*[@id="content"]/div[2]/div/div[2]/div/ul/li[1]/ul/li[1]/a')
     LOGOUT = (By.CSS_SELECTOR, '[href="/logout"]')
+    LOGO_LINK = (By.CLASS_NAME, 'iconic for_user iconic-logo4')
 
 class WalletLocators():
-    WALLET_SUM = (By.XPATH, '//*[@id="layout"]/div[6]/div[1]/div/div[1]/div/div[1]/span[2]/span')
+    WALLET_SUM = (By.CLASS_NAME, 'refresh_wallet_sum')
     BUTTON_WALLET_REFRESH = (By.XPATH, '//*[@id="layout"]/div[6]/div[1]/div/div[1]/div/div[1]/span[3]')
     WALLET_LINK = (By.XPATH, '//*[@id="layout"]/div[1]/div/div[1]/div[2]/div[2]/div/div[1]/a')
 
 class PageLotteryLocators7x49():
-    LINK_LOTTERY = (By.XPATH, '//*[@id="item_5150"]/a')
+    LINK_LOTTERY = (By.XPATH, '//*[@id="layout"]/div[9]/div[5]/div[3]/div/div[24]/div[3]/a')
     AUTO_FILL = (By.XPATH, '//*[@id="content"]/div[3]/div[1]/div[1]/div/div/div[7]/div[1]/span[1]')
     BUTTON_PAY = (By.XPATH, '//*[text()="Оплатить из кошелька"]')
 

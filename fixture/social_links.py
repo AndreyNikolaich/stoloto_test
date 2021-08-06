@@ -1,8 +1,5 @@
 import time
 
-
-
-
 class SocialLinksHelper:
 
     def __init__(self, app):
