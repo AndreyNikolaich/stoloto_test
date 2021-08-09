@@ -1,6 +1,7 @@
 from fixture.locators import WalletLocators
 from fixture.locators import PageLotteryLocators7x49
 from fixture.locators import MainPageLocators
+from fixture.locators import NumbersLottery
 
 class ByTicketHelper:
     def __init__(self, app):
@@ -30,18 +31,20 @@ class ByTicketHelper:
 
 
     def combination_ticket_in_page(self):
-        browser = self.browser
+        wd = self.app.wd
         number_page = []
-        for element in browser.find_element(*NumbersLottery.NUMBER_PAGE):
+        for element in wd.find_element(*NumbersLottery.NUMBER_PAGE):
             text = int(element.text)
             number_page.append('%02d' % text)
         return number_page
 
     def combination_tickets_in_page_my_tickets(self):
-        element = self.browser.find_element(*NumbersLottery.NUMBER_TICKETS)
+        wd = self.app.wd
+        element = wd.find_element(*NumbersLottery.NUMBER_TICKETS)
         number_ticket = int(element.text)
         return number_ticket
 
     def go_to_tickets_page(self):
-        tickets_page = self.browser.find_element(*MainPageLocators.MY_TICKETS_LINK)
+        wd = self.app.wd
+        tickets_page = wd.find_element(*MainPageLocators.MY_TICKETS_LINK)
         all_tickets.click()
