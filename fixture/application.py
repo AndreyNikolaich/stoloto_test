@@ -3,7 +3,8 @@ from fixture.session import SessionHelper
 from fixture.by_one_click import ByOneClickHelper
 from fixture.social_links import SocialLinksHelper
 from fixture.by_ticket import ByTicketHelper
-
+from fixture.interesting_lotteries import InterestingHelper
+from fixture.invite_friend import InviteFriendHelper
 
 class Application:
 
@@ -15,6 +16,8 @@ class Application:
         self.social_links = SocialLinksHelper(self)
         self.base_url = base_url
         self.by_ticket = ByTicketHelper(self)
+        self.interesting_lotteries = InterestingHelper(self)
+        self.invite_friend = InviteFriendHelper(self)
 
     def is_valid(self):
         try:
@@ -23,14 +26,12 @@ class Application:
         except:
             return False
 
-
     def open_home_page(self):
         wd = self.wd
         current_url = self.social_links.get_current_url()
         if not self.base_url == current_url:
             wd.get(self.base_url)
             wd.maximize_window()
-
 
     def destroy(self):
         self.wd.quit()

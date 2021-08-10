@@ -2,6 +2,7 @@ from fixture.locators import WalletLocators
 from fixture.locators import PageLotteryLocators7x49
 from fixture.locators import MainPageLocators
 from fixture.locators import NumbersLottery
+import time
 
 class ByTicketHelper:
     def __init__(self, app):
@@ -28,9 +29,14 @@ class ByTicketHelper:
             return False
 
 
+    def open_invoice(self):
+        wd = self.app.wd
+        self.app.wait.visible_css(element="td.ticket_number", t=60)
+        time.sleep(1)
+        wd.find_element_by_css_selector("td.ticket_number > a").click()
 
 
-    def combination_ticket_in_page(self):
+    def combination_ticket_in_page_lotery(self):
         wd = self.app.wd
         number_page = []
         for element in wd.find_element(*NumbersLottery.NUMBER_PAGE):

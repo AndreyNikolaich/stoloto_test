@@ -33,6 +33,7 @@ class UpsaleBanners():
 
 class FooterLoc():
     GIFT_TICKET = (By.XPATH, '//*[@id="navigation"]/div[1]/div[3]/div/ul/li[3]/a')
+    INVITE_FRIENDS = (By.CSS_SELECTOR, '[href="/invite_friend?service=invite_friend&int=podval')
 
 
 class BetOneClick():
